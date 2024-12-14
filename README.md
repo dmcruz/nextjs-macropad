@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Prototyping a macropad
+
+https://nextjs-macropad.vercel.app/
