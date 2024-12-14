@@ -33,10 +33,10 @@ export default function Home() {
           setKeyCapCharacters({ ...keyCapCharacters, [i]: i + 1 });
         }
         keyCapConfigs.push(
-          <div key={i} className="mb-4 flex items-center">
-            <div className="mr-4">
+          <div key={`kcc${i}`} className="flex items-center">
+            <div className="mr-4 center">
               <label htmlFor="keyCapCount" className="mr-2 font-bold">Color for {i + 1}: </label>
-              <select className="border p-1 w-24" value={keyCapColors[i]} onChange={(event) => handleColorChange(i, event)}>
+              <select className="border p-1 w-20" value={keyCapColors[i]} onChange={(event) => handleColorChange(i, event)}>
                 <option value={GRAY}>Gray</option>
                 <option value={RED}>Red</option>
                 <option value={GREEN}>Green</option>
@@ -48,8 +48,8 @@ export default function Home() {
             </div>
 
             <div>
-              <label htmlFor='keyCapCharacter' className="mr-2 font-bold">Character for {i + 1}: </label>
-              <input type='text' className="border p-1 w-24" value={keyCapCharacters[i]} onChange={(event) => handleCharacterChange(i, event)} maxLength={5} />
+              <label htmlFor='keyCapCharacter' className="mr-2 font-bold">Char for {i + 1}: </label>
+              <input type='text' className="border p-1 w-20" value={keyCapCharacters[i]} onChange={(event) => handleCharacterChange(i, event)} maxLength={5} />
             </div>
           </div>
         );
@@ -73,7 +73,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto p-4 flex flex-col items-center">
+    <div className="flex items-center justify-center min-h-screen">
       <Head>
         <title>Macropad Designer</title>
         <link rel="icon" href="/favicon.ico" />
@@ -92,9 +92,10 @@ export default function Home() {
               <option value={3}>3</option>
               <option value={6}>6</option>
               <option value={9}>9</option>
+              <option value={12}>12</option>
             </select>
           </div>
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {renderKeyCapConfigs()}
           </div>
         </div>
